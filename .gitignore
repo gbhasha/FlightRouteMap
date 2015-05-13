@@ -2,5 +2,4 @@ node_modules
 bower_components
 dist
 .tmp
-Icon\r
-"Icon\r"
+Icon^M^M
