@@ -151,7 +151,7 @@ gulp.task('serve', ['styles'], function () {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: ['.tmp', 'app']
+    server: ['.tmp', '.']
   });
 
   gulp.watch(['app/**/*.html'], reload);

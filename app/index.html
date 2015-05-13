@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Web Starter Kit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Flight Route Map</title>
     <!-- Add to homescreen -->
     <link rel="manifest" href="manifest.json">
     <!-- Fallback to homescreen for Chrome <39 on Android -->
@@ -27,21 +27,22 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
     <!-- Page styles -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../dist/styles/main.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
     <script src="../bower_components/datamaps/dist/datamaps.world.min.js"></script>
+    <script src="../bower_components/hammer.js/hammer.min.js"></script>
 </head>
 
 <body>
     <header class="app-bar promote-layer">
         <div class="app-bar-container">
-            <button class="menu"><img src="images/hamburger.svg" alt="Menu"></button>
-            <h1 class="logo">Jet <strong>Route Map</strong></h1>
-            <section class="app-bar-actions">
+            <!-- <button class="menu"><img src="images/hamburger.svg" alt="Menu"></button> -->
+            <h1 class="logo">Flight <strong>Route Map</strong></h1>
+            <!-- <section class="app-bar-actions"> -->
                 <!-- Put App Bar Buttons Here -->
                 <!-- e.g <button><i class="icon icon-star"></i></button> -->
-            </section>
+            <!-- </section> -->
         </div>
     </header>
     <!--     <nav class="navdrawer-container promote-layer">
@@ -54,10 +55,14 @@
     </nav> -->
     <main>
         <h1 id="hello">Route Map</h1>
-        <div id="container" style="position: relative; width: 500px; height: 300px;"></div>
+        <div id="container" class="map-container" style=""></div>
         <script>
         var map = new Datamap({
-            element: document.getElementById('container')
+            element: document.getElementById('container'),
+            geographyConfig: {
+                highlightOnHover: false,
+                popupOnHover: false
+            }
         });
         </script>
     </main>
